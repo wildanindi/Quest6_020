@@ -41,6 +41,7 @@ fun DataApp(
                 val konteks = LocalContext.current
                 FormIsian(
 
+                    jenisK = JenisK.map { id -> konteks.resources.getString(id) },
                     OnSubmitBtnClick = {
                         navController.navigate(Navigasi.Detail.name)
                     }
