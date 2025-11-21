@@ -43,12 +43,14 @@ fun DataApp(
 
                     jenisK = JenisK.map { id -> konteks.resources.getString(id) },
                     OnSubmitBtnClick = {
+                        viewModel.setSiswa(it)
                         navController.navigate(Navigasi.Detail.name)
                     }
                 )
             }
             composable(route = Navigasi.Detail.name){
                 TampilData (
+                    statusUiSiswa = uiState.value,
                     onBackBtnClick = {
                         cancelAndBackToFormulir(navController)
                     }
