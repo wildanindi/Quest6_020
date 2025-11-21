@@ -87,8 +87,10 @@ fun FormIsian(
                     ),
                         verticalAlignment = Alignment.CenterVertically){
                         RadioButton(
-                            selected = false,
-                            onClick = {item}
+                            selected = txtGender == item,
+                            onClick = {
+                                txtGender = item
+                            }
                         )
                         Text(text = item)
                     }
@@ -101,12 +103,14 @@ fun FormIsian(
                 color = Color.Red
             )
             OutlinedTextField(
-                value = "",
+                value = txtAlamat,
                 singleLine = true,
                 modifier = Modifier
                     .width(width = 250.dp),
                 label = {Text(text = "Alamat")},
-                onValueChange = {},
+                onValueChange = {
+                    txtAlamat = it
+                },
             )
             Spacer(modifier = Modifier.height(height = 30.dp))
             Button(
