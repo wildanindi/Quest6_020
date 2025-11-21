@@ -25,6 +25,7 @@ enum class Navigasi {
 @Composable
 fun DataApp(
     modifier: Modifier,
+    viewModel: SiswaViewModel = viewModel(),
     navController: NavHostController = rememberNavController()
 ){
     Scaffold { isiRuang->
